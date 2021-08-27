@@ -33,6 +33,7 @@
             transition: max-height 0.2s ease-out;
             background-color: rgb(16,16,32);
             padding-bottom: 20px;
+            border-radius: 12px;
         }
         section {
             padding:12px;
@@ -141,6 +142,41 @@
         64%  { transform: scale(1,1)      translateY(0); }
         100% { transform: scale(1,1)      translateY(0); }
     }
+    /* box-shadow animation */
+    .box-shadow-animation {
+        display: flex;
+        width: 350px;
+        align-items: center;
+        align-content: center;
+        margin:auto;
+        height:100px;
+        padding:2px;
+        margin-bottom: 30px;
+        margin-top:30px;
+    }
+    .box-shadow{
+        animation: box-shadow 2.3s infinite;
+        padding:20px;
+        height: 100px;
+        margin:10px;
+        border-radius: 12px;
+        animation-delay: var(--b);
+    }
+    @keyframes box-shadow{
+        0%   {
+            box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.4);
+            background-color: transparent;
+         }
+         50% {
+             background-color: #2978ff08;
+            box-shadow: 4px 8px 8px 2px rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.39);
+         }
+         100% {
+            background-color: transparent;
+            box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.4);
+        }
+    }
+
     </style>
 </head>
 <body>
@@ -430,8 +466,16 @@
     </article>
 
     <article>
-        <h2>Bouncy Wave Loading Animation</h2>
+        <h2>Box-shadow loading animation</h2>
         <figure>
+            <div class="box-shadow-animation">
+                <div class="box-shadow" style="--b:0s;"></div>
+                <div class="box-shadow" style="--b:.4s;"></div>
+                <div class="box-shadow" style="--b:.8s;"></div>
+                <div class="box-shadow" style="--b:1.2s;"></div>
+                <div class="box-shadow" style="--b:1.6s;"></div>
+                <div class="box-shadow" style="--b:2s;"></div>
+            </div>
         </figure>
         <button class="expand">Expand</button>
 
@@ -439,14 +483,98 @@
 
             <h3>HTML</h3>
             <section>
+                &lt;div class=&quot;box-shadow-animation&quot;&gt;<br>
+                &ensp;&ensp;&ensp;&lt;div class=&quot;box-shadow&quot; style=&quot;--b:0s;&quot;&gt;&lt;/div&gt;<br>
+                &ensp;&ensp;&ensp;&lt;div class=&quot;box-shadow&quot; style=&quot;--b:.4s;&quot;&gt;&lt;/div&gt;<br>
+                &ensp;&ensp;&ensp;&lt;div class=&quot;box-shadow&quot; style=&quot;--b:.8s;&quot;&gt;&lt;/div&gt;<br>
+                &ensp;&ensp;&ensp;&lt;div class=&quot;box-shadow&quot; style=&quot;--b:1.2s;&quot;&gt;&lt;/div&gt;<br>
+                &ensp;&ensp;&ensp;&lt;div class=&quot;box-shadow&quot; style=&quot;--b:1.6s;&quot;&gt;&lt;/div&gt;<br>
+                &ensp;&ensp;&ensp;&lt;div class=&quot;box-shadow&quot; style=&quot;--b:2s;&quot;&gt;&lt;/div&gt;<br>
+                &lt;/div&gt;
+
             </section>
-            <input type="hidden" value=''><button onClick="CopyToClipboard(this)">Copy to clipboard</button>
+            <input type="hidden" value=' <div class="box-shadow-animation">
+                <div class="box-shadow" style="--b:0s;"></div>
+                <div class="box-shadow" style="--b:.4s;"></div>
+                <div class="box-shadow" style="--b:.8s;"></div>
+                <div class="box-shadow" style="--b:1.2s;"></div>
+                <div class="box-shadow" style="--b:1.6s;"></div>
+                <div class="box-shadow" style="--b:2s;"></div>
+            </div>'><button onClick="CopyToClipboard(this)">Copy to clipboard</button>
 
 
             <h3>CSS</h3>
-            <section><br>
+            <section>
+                /* box-shadow animation */<br>
+                .box-shadow-animation {<br>
+                    &ensp;&ensp;&ensp;display: flex;<br>
+                    &ensp;&ensp;&ensp;width: 350px;<br> &ensp;&ensp;&ensp;
+                    align-items: center;<br> &ensp;&ensp;&ensp;
+                    align-content: center;<br> &ensp;&ensp;&ensp;
+                    margin:auto;<br> &ensp;&ensp;&ensp;
+                    height:100px;<br> &ensp;&ensp;&ensp;
+                    padding:2px;<br> &ensp;&ensp;&ensp;
+                    margin-bottom: 30px;<br> &ensp;&ensp;&ensp;
+                    margin-top:30px;<br>
+                }<br>
+                .box-shadow{<br> &ensp;&ensp;&ensp;
+                    animation: box-shadow 2.3s infinite;<br> &ensp;&ensp;&ensp;
+                    padding:20px;<br> &ensp;&ensp;&ensp;
+                    height: 100px;<br> &ensp;&ensp;&ensp;
+                    margin:10px;<br> &ensp;&ensp;&ensp;
+                    border-radius: 12px;<br> &ensp;&ensp;&ensp;
+                    animation-delay: var(--b);<br>
+                }<br>
+                @keyframes box-shadow{<br>
+                     &ensp;&ensp;&ensp;
+                    0%   {<br> &ensp;&ensp;&ensp; &ensp;&ensp;&ensp;
+                        box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.4); 
+                        <br>&ensp;&ensp;&ensp; &ensp;&ensp;&ensp;background-color: transparent;
+                        <br>&ensp;&ensp;&ensp;}<br> &ensp;&ensp;&ensp;
+                     50% {<br>
+                        &ensp;&ensp;&ensp; &ensp;&ensp;&ensp;background-color: #2978ff08;
+                        &ensp;&ensp;&ensp; &ensp;&ensp;&ensp; <br>&ensp;&ensp;&ensp; &ensp;&ensp;&ensp;box-shadow: 4px 8px 8px 2px rgba(0, 0, 0, 0.4),<br>&ensp;&ensp;&ensp; &ensp;&ensp;&ensp; 0 6px 20px 0 rgba(0, 0, 0, 0.39);
+                         <br>&ensp;&ensp;&ensp; }<br>
+                         &ensp;&ensp;&ensp;  100% {<br>
+                            &ensp;&ensp;&ensp; &ensp;&ensp;&ensp;background-color: transparent;
+                        <br>&ensp;&ensp;&ensp; &ensp;&ensp;&ensp;box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.4);
+                        <br>&ensp;&ensp;&ensp;}<br>
+                }
             </section>
-            <input type="hidden" value=''><button onClick="CopyToClipboard(this)">Copy to clipboard</button>
+            <input type="hidden" value=' /* box-shadow animation */
+            .box-shadow-animation {
+                display: flex;
+                width: 350px;
+                align-items: center;
+                align-content: center;
+                margin:auto;
+                height:100px;
+                padding:2px;
+                margin-bottom: 30px;
+                margin-top:30px;
+            }
+            .box-shadow{
+                animation: box-shadow 2.3s infinite;
+                padding:20px;
+                height: 100px;
+                margin:10px;
+                border-radius: 12px;
+                animation-delay: var(--b);
+            }
+            @keyframes box-shadow{
+                0%   {
+                    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.4);
+                    background-color: transparent;
+                 }
+                 50% {
+                     background-color: #2978ff08;
+                    box-shadow: 4px 8px 8px 2px rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.39);
+                 }
+                 100% {
+                    background-color: transparent;
+                    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.4);
+                }
+            }'><button onClick="CopyToClipboard(this)">Copy to clipboard</button>
 
 
             <h3>JS</h3>
