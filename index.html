@@ -128,7 +128,7 @@
         margin-right: 10px;
         transform-origin: bottom;
         width: 20px;
-        animation: bounce 2s infinite;
+        animation: bounce 1.4s infinite;
         animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
         animation-delay: var(--i);
     }
@@ -221,30 +221,17 @@
                 padding:2px;
             }
             .wave{
-            background-color: #2979FF;
-            padding-top: 6px;
-            padding-bottom: 6px;
-            padding-left: 3px;
-            padding-right: 3px;
-            width: 0;
-            margin:3px;
-            }   
-            .wave:nth-child(1) {
+                background-color: #2979FF;
+                padding-top: 6px;
+                padding-bottom: 6px;
+                padding-left: 3px;
+                padding-right: 3px;
+                width: 0;
+                margin:3px;
                 animation: wave 2s infinite;
-                animation-delay: 0s;
+                animation-delay: var(--w);    
             }
-            .wave:nth-child(2) {
-                animation: wave 2s infinite;
-                animation-delay: .4s;
-            }
-            .wave:nth-child(3) {
-                animation: wave 2s infinite;
-                animation-delay: .8s;
-            }
-            .wave:nth-child(4) {
-                animation: wave 2s infinite;
-                animation-delay: 1.2s;
-            }
+               
             @keyframes wave {
                 0% {padding-top:6px; padding-bottom:6px;}
                 50% {padding-top:12px; padding-bottom:12px;}
@@ -345,12 +332,119 @@
         <div class="expanded">
 
             <h3>HTML</h3>
-            <section></section>
-            <input type="hidden" value=''><button onClick="CopyToClipboard(this)">Copy to clipboard</button>
+            <section>
+                &lt;div class=&quot;bounce-wave&quot;&gt;<br>
+                &ensp;&ensp;&ensp;&lt;div class=&quot;box-bounce-wave&quot; style=&quot;--i:0s;&quot;&gt;&lt;/div&gt;<br>
+                &ensp;&ensp;&ensp;&lt;div class=&quot;box-bounce-wave&quot; style=&quot;--i:0.2s;&quot;&gt;&lt;/div&gt;<br>
+                &ensp;&ensp;&ensp;&lt;div class=&quot;box-bounce-wave&quot; style=&quot;--i:0.4s;&quot;&gt;&lt;/div&gt;<br>
+                &ensp;&ensp;&ensp;&lt;div class=&quot;box-bounce-wave&quot; style=&quot;--i:0.6s;&quot;&gt;&lt;/div&gt;<br>
+                &ensp;&ensp;&ensp;&lt;div class=&quot;box-bounce-wave&quot; style=&quot;--i:0.8s;&quot;&gt;&lt;/div&gt;<br>
+              
+                &lt;/div&gt;
+            </section>
+            <input type="hidden" value='  <div class="bounce-wave">
+                <div class="box-bounce-wave" style="--i:0s;"></div>
+                <div class="box-bounce-wave" style="--i:.2s;"></div>
+                <div class="box-bounce-wave" style="--i:.4s;"></div>
+                <div class="box-bounce-wave" style="--i:.6s;"></div>
+                <div class="box-bounce-wave" style="--i:.8s;"></div>
+            </div>'><button onClick="CopyToClipboard(this)">Copy to clipboard</button>
 
 
             <h3>CSS</h3>
             <section>
+                /* bouncy wave animation */<br>
+                .bounce-wave {<br>
+                    display: flex;<br>
+                    width: 200px;<br>
+                    align-items: center;<br>
+                    align-content: center;<br>
+                    margin:  0 auto;<br>
+                    height:100px;<br>
+                    padding:2px;<br>
+                }<br>
+            .box-bounce-wave {<br>
+                align-self: flex-end<br>;
+                background-color: #2979FF;<br>
+                height: 50px;<br>
+                margin: 0 auto 0 auto;<br>
+                margin-left:10px;<br>
+                margin-right: 10px;<br>
+                transform-origin: bottom;<br>
+                width: 20px;<br>
+                animation: bounce 1.4s infinite;<br>
+                animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);<br>
+                animation-delay: var(--i);<br>
+            }<br>
+            @keyframes bounce{<br>
+                0%   { transform: scale(1,1)      translateY(0); }<br>
+                10%  { transform: scale(1.1,.9)   translateY(0); }<br>
+                30%  { transform: scale(.9,1.1)   translateY(-30px); }<br>
+                50%  { transform: scale(1.05,.95) translateY(0); }<br>
+                57%  { transform: scale(1,1)      translateY(-7px); }<br>
+                64%  { transform: scale(1,1)      translateY(0); }<br>
+                100% { transform: scale(1,1)      translateY(0); }<br>
+            }<br>
+            </section>
+            <input type="hidden" value='  /* bouncy wave animation */
+            .bounce-wave {
+                display: flex;
+                width: 200px;
+                align-items: center;
+                align-content: center;
+                margin:  0 auto;
+                height:100px;
+                padding:2px;
+            }
+        .box-bounce-wave {
+            align-self: flex-end;
+            background-color: #2979FF;
+            height: 50px;
+            margin: 0 auto 0 auto;
+            margin-left:10px;
+            margin-right: 10px;
+            transform-origin: bottom;
+            width: 20px;
+            animation: bounce 1.4s infinite;
+            animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
+            animation-delay: var(--i);
+        }
+        @keyframes bounce{
+            0%   { transform: scale(1,1)      translateY(0); }
+            10%  { transform: scale(1.1,.9)   translateY(0); }
+            30%  { transform: scale(.9,1.1)   translateY(-30px); }
+            50%  { transform: scale(1.05,.95) translateY(0); }
+            57%  { transform: scale(1,1)      translateY(-7px); }
+            64%  { transform: scale(1,1)      translateY(0); }
+            100% { transform: scale(1,1)      translateY(0); }
+        }'><button onClick="CopyToClipboard(this)">Copy to clipboard</button>
+
+
+            <h3>JS</h3>
+            <section>
+                Not needed
+            </section>
+            <input type="hidden" value=""><button onClick="CopyToClipboard(this)">Copy to clipboard</button>
+
+        </div>
+    </article>
+
+    <article>
+        <h2>Bouncy Wave Loading Animation</h2>
+        <figure>
+        </figure>
+        <button class="expand">Expand</button>
+
+        <div class="expanded">
+
+            <h3>HTML</h3>
+            <section>
+            </section>
+            <input type="hidden" value=''><button onClick="CopyToClipboard(this)">Copy to clipboard</button>
+
+
+            <h3>CSS</h3>
+            <section><br>
             </section>
             <input type="hidden" value=''><button onClick="CopyToClipboard(this)">Copy to clipboard</button>
 
