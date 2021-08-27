@@ -82,23 +82,9 @@
         padding-right: 3px;
         width: 0;
         margin:3px;
+        animation: wave 2s infinite;
+        animation-delay: var(--w);
         }   
-        .wave:nth-child(1) {
-            animation: wave 2s infinite;
-            animation-delay: 0s;
-        }
-        .wave:nth-child(2) {
-            animation: wave 2s infinite;
-            animation-delay: .4s;
-        }
-        .wave:nth-child(3) {
-            animation: wave 2s infinite;
-            animation-delay: .8s;
-        }
-        .wave:nth-child(4) {
-            animation: wave 2s infinite;
-            animation-delay: 1.2s;
-        }
         @keyframes wave {
             0% {padding-top:6px; padding-bottom:6px;}
             50% {padding-top:12px; padding-bottom:12px;}
@@ -123,20 +109,53 @@
                 transform: rotate(360deg);
             }
         }
+        /* bouncy wave animation */
+        .bounce-wave {
+            display: flex;
+            width: 200px;
+            align-items: center;
+            align-content: center;
+            margin:  0 auto;
+            height:100px;
+            padding:2px;
+        }
+    .box-bounce-wave {
+        align-self: flex-end;
+        background-color: #2979FF;
+        height: 50px;
+        margin: 0 auto 0 auto;
+        margin-left:10px;
+        margin-right: 10px;
+        transform-origin: bottom;
+        width: 20px;
+        animation: bounce 2s infinite;
+        animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
+        animation-delay: var(--i);
+    }
+    @keyframes bounce{
+        0%   { transform: scale(1,1)      translateY(0); }
+        10%  { transform: scale(1.1,.9)   translateY(0); }
+        30%  { transform: scale(.9,1.1)   translateY(-30px); }
+        50%  { transform: scale(1.05,.95) translateY(0); }
+        57%  { transform: scale(1,1)      translateY(-7px); }
+        64%  { transform: scale(1,1)      translateY(0); }
+        100% { transform: scale(1,1)      translateY(0); }
+    }
     </style>
 </head>
 <body>
     <h1>Loading Animations for your projects</h1>
     <h4>To know more about each loading animation, click on expand.</h4>
+    
 
     <article>
         <h2>Wave Loading Animation</h2>
         <figure>
             <div class="wave-animation"> 
-                <div class="wave"></div>
-                <div class="wave"></div>
-                <div class="wave"></div>
-                <div class="wave"></div>
+                <div class="wave" style="--w:0s;"></div>
+                <div class="wave" style="--w:0.4s;"></div>
+                <div class="wave" style="--w:0.8s;"></div>
+                <div class="wave" style="--w:1.2s;"></div>
             </div>
         </figure>
         <button class="expand">Expand</button>
@@ -146,19 +165,19 @@
             <h3>HTML</h3>
             <section>
                 &lt;div class=&quot;wave-animation&quot;&gt; <br>
-                &ensp;&ensp;&ensp;&lt;div class=&quot;wave&quot;&gt;&lt;/div&gt;<br>
-                &ensp;&ensp;&ensp;&lt;div class=&quot;wave&quot;&gt;&lt;/div&gt;<br>
-                &ensp;&ensp;&ensp;&lt;div class=&quot;wave&quot;&gt;&lt;/div&gt;<br>
-                &ensp;&ensp;&ensp;&lt;div class=&quot;wave&quot;&gt;&lt;/div&gt;<br>
+                &ensp;&ensp;&ensp;&lt;div class=&quot;wave&quot; style=&quot;--w:0s;&quot;&gt;&lt;/div&gt;<br>
+                &ensp;&ensp;&ensp;&lt;div class=&quot;wave&quot; style=&quot;--w:0.4s;&quot;&gt;&lt;/div&gt;<br>
+                &ensp;&ensp;&ensp;&lt;div class=&quot;wave&quot; style=&quot;--w:0.8s;&quot;&gt;&lt;/div&gt;<br>
+                &ensp;&ensp;&ensp;&lt;div class=&quot;wave&quot; style=&quot;--w:1.2s;&quot;&gt;&lt;/div&gt;<br>
                 &lt;/div&gt;
                
             </section>
             <input type="hidden" value='
             <div class="wave-animation"> 
-                <div class="wave"></div>
-                <div class="wave"></div>
-                <div class="wave"></div>
-                <div class="wave"></div>
+                <div class="wave" style="--w:0s;"></div>
+                <div class="wave style="--w:0.4s;""></div>
+                <div class="wave" style="--w:0.8s;"></div>
+                <div class="wave" style="--w:1.2s;"></div>
             </div>
             '><button onClick="CopyToClipboard(this)">Copy to clipboard</button>
 
@@ -181,24 +200,10 @@
                 padding-left: 3px;<br>&ensp;&ensp;&ensp;
                 padding-right: 3px;<br>&ensp;&ensp;&ensp;
                 width: 0;<br>&ensp;&ensp;&ensp;
-                margin:3px;<br>
+                margin:3px;<br>&ensp;&ensp;&ensp;
+                animation: wave 2s infinite;<br>&ensp;&ensp;&ensp;
+                animation-delay: var(--w);<br>
                 }   <br>
-                .wave:nth-child(1) {<br>&ensp;&ensp;&ensp;
-                    animation: wave 2s infinite;<br>&ensp;&ensp;&ensp;
-                    animation-delay: 0s;<br>
-                }<br>
-                .wave:nth-child(2) {<br>&ensp;&ensp;&ensp;
-                    animation: wave 2s infinite;<br>&ensp;&ensp;&ensp;
-                    animation-delay: .4s;<br>
-                }<br>
-                .wave:nth-child(3) {<br>&ensp;&ensp;&ensp;
-                    animation: wave 2s infinite;<br>&ensp;&ensp;&ensp;
-                    animation-delay: .8s;<br>
-                }<br>
-                .wave:nth-child(4) {<br>&ensp;&ensp;&ensp;
-                    animation: wave 2s infinite;<br>&ensp;&ensp;&ensp;
-                    animation-delay: 1.2s;<br>
-                }<br>
                 @keyframes wave {<br>&ensp;&ensp;&ensp;
                     0% {padding-top:6px; padding-bottom:6px;}<br>&ensp;&ensp;&ensp;
                     50% {padding-top:12px; padding-bottom:12px;}<br>&ensp;&ensp;&ensp;
@@ -255,8 +260,9 @@
 
         </div>
     </article>
+
     <article>
-        <h2>Simple Circle Animation</h2>
+        <h2>Simple Circle Loading Animation</h2>
         <figure>
           <div class="circle-animation"></div>
         </figure>
@@ -312,6 +318,41 @@
                     transform: rotate(360deg);
                 }
             }'><button onClick="CopyToClipboard(this)">Copy to clipboard</button>
+
+
+            <h3>JS</h3>
+            <section>
+                Not needed
+            </section>
+            <input type="hidden" value=""><button onClick="CopyToClipboard(this)">Copy to clipboard</button>
+
+        </div>
+    </article>
+
+    <article>
+        <h2>Bouncy Wave Loading Animation</h2>
+        <figure>
+            <div class="bounce-wave">
+                <div class="box-bounce-wave" style="--i:0s;"></div>
+                <div class="box-bounce-wave" style="--i:.2s;"></div>
+                <div class="box-bounce-wave" style="--i:.4s;"></div>
+                <div class="box-bounce-wave" style="--i:.6s;"></div>
+                <div class="box-bounce-wave" style="--i:.8s;"></div>
+            </div>
+        </figure>
+        <button class="expand">Expand</button>
+
+        <div class="expanded">
+
+            <h3>HTML</h3>
+            <section></section>
+            <input type="hidden" value=''><button onClick="CopyToClipboard(this)">Copy to clipboard</button>
+
+
+            <h3>CSS</h3>
+            <section>
+            </section>
+            <input type="hidden" value=''><button onClick="CopyToClipboard(this)">Copy to clipboard</button>
 
 
             <h3>JS</h3>
