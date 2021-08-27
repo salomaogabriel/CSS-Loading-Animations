@@ -104,7 +104,25 @@
             50% {padding-top:12px; padding-bottom:12px;}
             100% {padding-top:6px; padding-bottom:6px;}
         }
-        
+        /* simple circle animation */
+        .circle-animation {
+            margin:auto;
+            padding:10px;
+            border-radius: 50%;
+            width: min-content;
+            border:5px solid transparent;
+            border-bottom-color: #2979FF;
+            animation: circle 1s infinite;
+            animation-timing-function: linear;
+        }
+        @keyframes circle {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
     </style>
 </head>
 <body>
@@ -226,6 +244,73 @@
                 0% {padding-top:6px; padding-bottom:6px;}
                 50% {padding-top:12px; padding-bottom:12px;}
                 100% {padding-top:6px; padding-bottom:6px;}
+            }'><button onClick="CopyToClipboard(this)">Copy to clipboard</button>
+
+
+            <h3>JS</h3>
+            <section>
+                Not needed
+            </section>
+            <input type="hidden" value=""><button onClick="CopyToClipboard(this)">Copy to clipboard</button>
+
+        </div>
+    </article>
+    <article>
+        <h2>Simple Circle Animation</h2>
+        <figure>
+          <div class="circle-animation"></div>
+        </figure>
+        <button class="expand">Expand</button>
+
+        <div class="expanded">
+
+            <h3>HTML</h3>
+            <section>
+                &lt;div class=&quotcircle-animation&quot&gt;&lt;/div&gt;
+            </section>
+            <input type="hidden" value='<div class="circle-animation"></div>'><button onClick="CopyToClipboard(this)">Copy to clipboard</button>
+
+
+            <h3>CSS</h3>
+            <section> /* simple circle animation */<br>
+                .circle-animation {<br>&ensp;&ensp;&ensp;
+                    margin:auto;<br>&ensp;&ensp;&ensp;
+                    padding:10px;<br>&ensp;&ensp;&ensp;
+                    border-radius: 50%;<br>&ensp;&ensp;&ensp;
+                    width: min-content;<br>&ensp;&ensp;&ensp;
+                    border:5px solid transparent;<br>&ensp;&ensp;&ensp;
+                    border-bottom-color: #2979FF;<br>&ensp;&ensp;&ensp;
+                    animation: circle 1s infinite;<br>&ensp;&ensp;&ensp;
+                    animation-timing-function: linear;<br>
+                }<br>
+                @keyframes circle {<br>&ensp;&ensp;&ensp;
+                    0% {<br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+                        transform: rotate(0deg);&ensp;&ensp;&ensp;
+                        <br>&ensp;&ensp;&ensp;}<br>&ensp;&ensp;&ensp;
+                    100% {<br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+                        transform: rotate(360deg);&ensp;&ensp;&ensp;
+                        <br>&ensp;&ensp;&ensp;}<br>
+                }
+            </section>
+            <input type="hidden" value='
+            /* simple circle animation */
+            .circle-animation {
+                margin:auto;
+                padding:10px;
+                border-radius: 50%;
+                width: min-content;
+                border:5px solid transparent;
+                border-bottom-color: #2979FF;
+                animation: circle 1s infinite;
+                animation-timing-function: linear;
+            }
+            @keyframes circle {
+                0% {
+                    transform: rotate(0deg);
+                }
+                100% {
+                    transform: rotate(360deg);
+                }
             }'><button onClick="CopyToClipboard(this)">Copy to clipboard</button>
 
 
