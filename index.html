@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap" rel="stylesheet">
     <style>
+        /* templates */
         body {
             font-family: 'Roboto', sans-serif;
             color:rgb(210,220,234);
@@ -22,13 +21,18 @@
         article {
             background-color: rgb(16,16,32);
             margin:auto;
+            box-shadow: 4px 8px 8px 2px rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.39);
+            border-radius: 12px;
+            margin-bottom: 30px;
+            
         }
-        div {
+        .expanded {
             padding: 0 18px;
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.2s ease-out;
             background-color: rgb(16,16,32);
+            padding-bottom: 20px;
         }
         section {
             padding:12px;
@@ -36,17 +40,19 @@
             border-radius: 12px;
             margin:auto;
             width: 60%;
+            text-align: start;
+            color:rgb(170,180,194);
         }
         button {
             background-color: transparent;
-            color:#2979FF;;
+            color:#2979FF;
             font-size: 24px;
             border:0;
             font-weight: 600;
             cursor: pointer;
             margin-bottom: 10px;
         }
-        div button:last-child {
+        div section:last-child {
             margin-bottom: 20px;
         }
         div button {
@@ -58,42 +64,176 @@
         img {
             cursor: pointer;
         }
+        /* Wave Animation */
+        .wave-animation {
+            display: flex;
+            width: 50px;
+            align-items: center;
+            align-content: center;
+            margin:  0 auto;
+            height:100px;
+            padding:2px;
+        }
+        .wave{
+        background-color: #2979FF;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        padding-left: 3px;
+        padding-right: 3px;
+        width: 0;
+        margin:3px;
+        }   
+        .wave:nth-child(1) {
+            animation: wave 2s infinite;
+            animation-delay: 0s;
+        }
+        .wave:nth-child(2) {
+            animation: wave 2s infinite;
+            animation-delay: .4s;
+        }
+        .wave:nth-child(3) {
+            animation: wave 2s infinite;
+            animation-delay: .8s;
+        }
+        .wave:nth-child(4) {
+            animation: wave 2s infinite;
+            animation-delay: 1.2s;
+        }
+        @keyframes wave {
+            0% {padding-top:6px; padding-bottom:6px;}
+            50% {padding-top:12px; padding-bottom:12px;}
+            100% {padding-top:6px; padding-bottom:6px;}
+        }
+        
     </style>
 </head>
 <body>
     <h1>Loading Animations for your projects</h1>
     <h4>To know more about each loading animation, click on expand.</h4>
+
     <article>
-        <h2>Animation Name:</h2>
+        <h2>Wave Loading Animation</h2>
         <figure>
-            
+            <div class="wave-animation"> 
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+            </div>
         </figure>
         <button class="expand">Expand</button>
-        <div>
+
+        <div class="expanded">
+
             <h3>HTML</h3>
             <section>
-                &lt; Hello World &gt; <br>
-                <br>
-                aa
+                &lt;div class=&quot;wave-animation&quot;&gt; <br>
+                &ensp;&ensp;&ensp;&lt;div class=&quot;wave&quot;&gt;&lt;/div&gt;<br>
+                &ensp;&ensp;&ensp;&lt;div class=&quot;wave&quot;&gt;&lt;/div&gt;<br>
+                &ensp;&ensp;&ensp;&lt;div class=&quot;wave&quot;&gt;&lt;/div&gt;<br>
+                &ensp;&ensp;&ensp;&lt;div class=&quot;wave&quot;&gt;&lt;/div&gt;<br>
+                &lt;/div&gt;
+               
             </section>
-            <input type="hidden" value="<p> Hello World </p>"><button onClick="CopyToClipboard(this)">Copy to clipboard</button>
+            <input type="hidden" value='
+            <div class="wave-animation"> 
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+            </div>
+            '><button onClick="CopyToClipboard(this)">Copy to clipboard</button>
 
-        
+
             <h3>CSS</h3>
             <section>
-                .div {
-                    background-color:red;
-                }
+                /* Wave Animation */ <br>
+                .wave-animation {<br>
+                    &ensp;&ensp;&ensp;display: flex;<br>
+                    &ensp;&ensp;&ensp;width: 50px;<br>&ensp;&ensp;&ensp;
+                    align-items: center;<br>&ensp;&ensp;&ensp;
+                    align-content: center;<br>&ensp;&ensp;&ensp;
+                    margin:  0 auto;<br>&ensp;&ensp;&ensp;
+                    height:100px;<br>&ensp;&ensp;&ensp;
+                }<br>
+                .wave{<br>&ensp;&ensp;&ensp;
+                background-color: #2979FF;<br>&ensp;&ensp;&ensp;
+                padding-top: 6px;<br>&ensp;&ensp;&ensp;
+                padding-bottom: 6px;<br>&ensp;&ensp;&ensp;
+                padding-left: 3px;<br>&ensp;&ensp;&ensp;
+                padding-right: 3px;<br>&ensp;&ensp;&ensp;
+                width: 0;<br>&ensp;&ensp;&ensp;
+                margin:3px;<br>
+                }   <br>
+                .wave:nth-child(1) {<br>&ensp;&ensp;&ensp;
+                    animation: wave 2s infinite;<br>&ensp;&ensp;&ensp;
+                    animation-delay: 0s;<br>
+                }<br>
+                .wave:nth-child(2) {<br>&ensp;&ensp;&ensp;
+                    animation: wave 2s infinite;<br>&ensp;&ensp;&ensp;
+                    animation-delay: .4s;<br>
+                }<br>
+                .wave:nth-child(3) {<br>&ensp;&ensp;&ensp;
+                    animation: wave 2s infinite;<br>&ensp;&ensp;&ensp;
+                    animation-delay: .8s;<br>
+                }<br>
+                .wave:nth-child(4) {<br>&ensp;&ensp;&ensp;
+                    animation: wave 2s infinite;<br>&ensp;&ensp;&ensp;
+                    animation-delay: 1.2s;<br>
+                }<br>
+                @keyframes wave {<br>&ensp;&ensp;&ensp;
+                    0% {padding-top:6px; padding-bottom:6px;}<br>&ensp;&ensp;&ensp;
+                    50% {padding-top:12px; padding-bottom:12px;}<br>&ensp;&ensp;&ensp;
+                    100% {padding-top:6px; padding-bottom:6px;}<br>
+                }<br>
             </section>
-            <input type="hidden" value=".div {
-                background-color>red;
-            }"><button onClick="CopyToClipboard(this)">Copy to clipboard</button>
+            <input type="hidden" value=' /* Wave Animation */
+            .wave-animation {
+                display: flex;
+                width: 50px;
+                align-items: center;
+                align-content: center;
+                margin:  0 auto;
+                height:100px;
+                padding:2px;
+            }
+            .wave{
+            background-color: #2979FF;
+            padding-top: 6px;
+            padding-bottom: 6px;
+            padding-left: 3px;
+            padding-right: 3px;
+            width: 0;
+            margin:3px;
+            }   
+            .wave:nth-child(1) {
+                animation: wave 2s infinite;
+                animation-delay: 0s;
+            }
+            .wave:nth-child(2) {
+                animation: wave 2s infinite;
+                animation-delay: .4s;
+            }
+            .wave:nth-child(3) {
+                animation: wave 2s infinite;
+                animation-delay: .8s;
+            }
+            .wave:nth-child(4) {
+                animation: wave 2s infinite;
+                animation-delay: 1.2s;
+            }
+            @keyframes wave {
+                0% {padding-top:6px; padding-bottom:6px;}
+                50% {padding-top:12px; padding-bottom:12px;}
+                100% {padding-top:6px; padding-bottom:6px;}
+            }'><button onClick="CopyToClipboard(this)">Copy to clipboard</button>
+
 
             <h3>JS</h3>
             <section>
-                Hello World
+                Not needed
             </section>
-            <input type="hidden" value="Hello World"><button onClick="CopyToClipboard(this)">Copy to clipboard</button>
+            <input type="hidden" value=""><button onClick="CopyToClipboard(this)">Copy to clipboard</button>
 
         </div>
     </article>
@@ -117,7 +257,7 @@
         function CopyToClipboard(button) {
             var textToCopy = button.previousSibling;
             navigator.clipboard.writeText(textToCopy.value);
-            alert(textToCopy.value);
+            alert("copied");
         }
         </script>
 </body>
